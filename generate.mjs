@@ -89,7 +89,7 @@ function buildSankeyData(entries) {
   });
   const rows = Object.values(groups).map(g => {
     const arr = new Array(nSteps + 2);
-    arr[0] = g.count > 1 ? `${g.company} \u00d7${g.count}` : g.company;
+    arr[0] = g.company;
     arr[1] = g.count;
     for (let si = 0; si < nSteps; si++) {
       if (si < g.stepIdx) arr[si+2] = null;
