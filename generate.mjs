@@ -1,4 +1,4 @@
-// generate.mjs — Fetches Notion data via REST API and generates internship_sankey_flow.html
+// generate.mjs - Fetches Notion data via REST API and generates index.html
 import fs from "fs";
 
 const TOKEN = process.env.NOTION_TOKEN;
@@ -37,7 +37,7 @@ function extractEntry(page) {
   const company = p["Company"]?.select?.name || "";
   const status = p["Status"]?.select?.name || "";
   const appliedDate = p["Applied Date"]?.date?.start || "";
-  const role = p["岗位-"]?.rich_text?.[0]?.plain_text || p["岗位"]?.title?.[0]?.plain_text || "";
+  const role = p["\u5C97\u4F4D-"]?.rich_text?.[0]?.plain_text || p["\u5C97\u4F4D"]?.title?.[0]?.plain_text || "";
   return { company, status, appliedDate, role };
 }
 
