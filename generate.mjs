@@ -207,7 +207,7 @@ async function main() {
   const tongResult = buildSankeyData(tongEntries);
   const html = generateHTML(hangResult, tongResult);
   fs.writeFileSync("index.html", html);
-  console.log("Generated internship_sankey_flow.html");
+  console.log("Generated index.html");
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
